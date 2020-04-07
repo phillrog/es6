@@ -240,4 +240,13 @@ console.log(usuario3); /// Template literals
 var nomeAtual = 'Phillipe';
 var idadeAtual = 300; //console.log('Meu nome é ', nomeAtual, ' e minha idade é ', idadeAtual, 'anos');
 
-console.log("Meu nome \xE9 ".concat(nomeAtual, " e minha idade \xE9 ").concat(idadeAtual, " anos"));
+console.log("Meu nome \xE9 ".concat(nomeAtual, " e minha idade \xE9 ").concat(idadeAtual, " anos")); /// Object Short Syntax
+
+var especie = 'Humano';
+var tipo = 'Homem';
+var animal = {
+  especie: especie,
+  tipo: tipo,
+  empresa: 'legal'
+};
+console.log(animal);

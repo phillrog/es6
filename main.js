@@ -176,3 +176,16 @@ const idadeAtual = 300;
 
 //console.log('Meu nome é ', nomeAtual, ' e minha idade é ', idadeAtual, 'anos');
 console.log(`Meu nome é ${nomeAtual} e minha idade é ${idadeAtual} anos`);
+
+/// Object Short Syntax
+
+const especie = 'Humano';
+const tipo = 'Homem';
+
+const animal = {
+    especie,
+    tipo,
+    empresa: 'legal'
+}
+
+console.log(animal);
