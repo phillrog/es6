@@ -162,4 +162,28 @@ var arrFunc6 = function arrFunc6() {
   return a + b;
 };
 
-console.log(arrFunc6());
+console.log(arrFunc6()); /// Desestruturação
+
+var user = {
+  nome: 'Phillipe',
+  idade: 300,
+  endereco: {
+    cidade: 'Santa Rosa de Viterbo',
+    estado: 'SP'
+  }
+};
+var nome = user.nome,
+    idade = user.idade,
+    cidade = user.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+var parametrizado = function parametrizado(_ref) {
+  var nome = _ref.nome,
+      cidade = _ref.cidade,
+      estado = _ref.endereco.estado;
+  return console.log(nome, ' - ', idade, ' - ', estado);
+};
+
+parametrizado(user);

@@ -112,3 +112,24 @@ console.log(arrFunc5());
 const arrFunc6 = (a = 1, b= 2) => a + b;
 
 console.log(arrFunc6());
+
+
+/// Desestruturação
+const user = {
+    nome: 'Phillipe',
+    idade: 300,
+    endereco: {
+        cidade: 'Santa Rosa de Viterbo',
+        estado: 'SP'
+    }
+}
+
+const { nome, idade, endereco: {cidade} } = user;
+
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+const parametrizado = ({nome, cidade, endereco: {estado}}) => console.log(nome, ' - ', idade, ' - ', estado);
+
+parametrizado(user);
