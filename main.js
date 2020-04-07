@@ -35,3 +35,21 @@ document.getElementById('novotodo').onclick = function () {
 MinhaLista.mostraUsuario();
 
 console.log(Matematica.soma(10,2));
+
+/// variaveis mutaveis
+const usuario = { nome: 'João' }
+
+usuario.nome = 'Jonas';
+
+console.log(usuario.nome);
+
+/// escopo
+function teste(z) {
+    let x = 1;
+
+    if (z > 5) {
+        console.log(z, x);
+    }
+}
+
+teste(10);

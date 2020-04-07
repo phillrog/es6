@@ -87,4 +87,20 @@ document.getElementById('novotodo').onclick = function () {
 };
 
 MinhaLista.mostraUsuario();
-console.log(Matematica.soma(10, 2));
+console.log(Matematica.soma(10, 2)); /// variaveis mutaveis
+
+var usuario = {
+  nome: 'João'
+};
+usuario.nome = 'Jonas';
+console.log(usuario.nome); /// escopo
+
+function teste(z) {
+  var x = 1;
+
+  if (z > 5) {
+    console.log(z, x);
+  }
+}
+
+teste(10);
