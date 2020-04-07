@@ -121,4 +121,37 @@ console.log(filter);
 var find = arr.find(function (item) {
   return item == 6;
 });
-console.log(find);
+console.log(find); /// Arraow funcitons
+
+var newArray1 = arr.map(function (item) {
+  return item * 2;
+});
+console.log(newArray1);
+
+var arrFunc2 = function arrFunc2() {
+  return 1;
+};
+
+console.log(arrFunc2());
+
+var arrFunc3 = function arrFunc3() {
+  return [1, 2, 3, 4];
+};
+
+console.log(arrFunc3());
+
+var arrFunc4 = function arrFunc4() {
+  return {
+    nome: 'Nome'
+  };
+};
+
+console.log(arrFunc4());
+
+var arrFunc5 = function arrFunc5() {
+  return {
+    nome: 'Outro Nome'
+  };
+};
+
+console.log(arrFunc5());

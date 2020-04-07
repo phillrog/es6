@@ -81,3 +81,28 @@ const find = arr.find(function(item) {
 });
 
 console.log(find);
+
+
+/// Arraow funcitons
+
+const newArray1 = arr.map((item) => item * 2); 
+
+console.log(newArray1);
+
+const arrFunc2 = () => 1; 
+
+console.log(arrFunc2());
+
+const arrFunc3 = () => [1,2,3,4]; 
+
+console.log(arrFunc3());
+
+const arrFunc4 = () => ({nome: 'Nome'}); 
+
+console.log(arrFunc4());
+
+const arrFunc5 = () => { 
+    return {nome: 'Outro Nome'}
+}; 
+
+console.log(arrFunc5());
