@@ -169,3 +169,10 @@ const usuario3 = { ...usuario2, nome: 'Truco'};
 
 console.log(usuario3);
 
+/// Template literals
+
+const nomeAtual = 'Phillipe';
+const idadeAtual = 300;
+
+//console.log('Meu nome é ', nomeAtual, ' e minha idade é ', idadeAtual, 'anos');
+console.log(`Meu nome é ${nomeAtual} e minha idade é ${idadeAtual} anos`);
