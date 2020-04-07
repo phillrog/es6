@@ -106,3 +106,9 @@ const arrFunc5 = () => {
 }; 
 
 console.log(arrFunc5());
+
+/// valores padrão
+
+const arrFunc6 = (a = 1, b= 2) => a + b;
+
+console.log(arrFunc6());
