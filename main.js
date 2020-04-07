@@ -133,3 +133,39 @@ console.log(cidade);
 const parametrizado = ({nome, cidade, endereco: {estado}}) => console.log(nome, ' - ', idade, ' - ', estado);
 
 parametrizado(user);
+
+/// rest/spread
+
+// REST - resto das propriedades
+
+const {nome2, ...resto} = user;
+
+console.log(nome2, resto);
+
+const [a1,b2, ...c1] = arr;
+
+console.log(a1, b2, c1);
+
+const restSoma = (...parametros) => parametros.reduce((item, next) => item + next);
+
+console.log(restSoma(1,2,3,4,5,6,7,8,9,10));
+
+//// SPREAD
+/// propagar, repassar o resto da estrutura de um array
+
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+const arr3 = [...arr1, ...arr2];
+
+console.log(arr3);
+
+const usuario2 = {
+    nome: 'Phillipe',
+    idade: 300,
+    empresa: 'ELisarts'
+};
+
+const usuario3 = { ...usuario2, nome: 'Truco'};
+
+console.log(usuario3);
+

@@ -1,5 +1,15 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
@@ -186,4 +196,43 @@ var parametrizado = function parametrizado(_ref) {
   return console.log(nome, ' - ', idade, ' - ', estado);
 };
 
-parametrizado(user);
+parametrizado(user); /// rest/spread
+// REST - resto das propriedades
+
+var nome2 = user.nome2,
+    resto = _objectWithoutProperties(user, ["nome2"]);
+
+console.log(nome2, resto);
+var a1 = arr[0],
+    b2 = arr[1],
+    c1 = arr.slice(2);
+console.log(a1, b2, c1);
+
+var restSoma = function restSoma() {
+  for (var _len = arguments.length, parametros = new Array(_len), _key = 0; _key < _len; _key++) {
+    parametros[_key] = arguments[_key];
+  }
+
+  return parametros.reduce(function (item, next) {
+    return item + next;
+  });
+};
+
+console.log(restSoma(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)); //// SPREAD
+/// propagar, repassar o resto da estrutura de um array
+
+var arr1 = [1, 2, 3];
+var arr2 = [4, 5, 6];
+var arr3 = [].concat(arr1, arr2);
+console.log(arr3);
+var usuario2 = {
+  nome: 'Phillipe',
+  idade: 300,
+  empresa: 'ELisarts'
+};
+
+var usuario3 = _objectSpread({}, usuario2, {
+  nome: 'Truco'
+});
+
+console.log(usuario3);
