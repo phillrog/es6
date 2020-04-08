@@ -9,6 +9,7 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.0",
     "babel-loader": "^8.1.0",
@@ -22,6 +23,9 @@
   },
   "dependencies": {
     "@babel/plugin-transform-async-to-generator": "^7.8.3",
-    "axios": "^0.19.2"
+    "@babel/runtime": "^7.9.2",
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
+    "regenerator-runtime": "^0.13.5"
   }
 }
