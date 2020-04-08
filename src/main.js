@@ -1,4 +1,5 @@
 import api from './api';
+import { load } from 'signal-exit';
 
 class App {
     constructor () {
@@ -23,21 +24,28 @@ class App {
         if (repoInput.length === 0  )
             return;
 
-        const response = await api.get(`repos/${repoInput}`);
+        this.setLoading(true);
+        try {
+            const response = await api.get(`repos/${repoInput}`);
 
-        const {name, description, html_url, owner: { avatar_url }} = response.data;
-        
+            const {name, description, html_url, owner: { avatar_url }} = response.data;
+            
 
-        this.respositories.push({
-            name,
-            description,
-            avatar_url,
-            html_url
-        });
-
-        this.inputEl.value = '';
-        
-        this.render();
+            this.respositories.push({
+                name,
+                description,
+                avatar_url,
+                html_url
+            });
+                        
+            this.inputEl.value = '';
+            
+            this.render();
+        } catch (error) {
+            alert('O repositorio não existe')
+        } finally {
+            this.setLoading(false);
+        }
     }
 
     render() {
@@ -66,6 +74,18 @@ class App {
 
             this.listEl.appendChild(listItemEl);
         });
+    }
+
+    setLoading(loading = true) {
+        if (loading === true) {
+            let loadingEl = document.createElement('span');
+            loadingEl.appendChild(document.createTextNode('Carregando...'));
+            loadingEl.setAttribute('id','loading');
+
+            this.formEl.appendChild(loadingEl);
+        }  else { 
+            document.getElementById('loading').remove();
+        }
     }
 }
 
